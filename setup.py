@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
-from emoji import emojize
+#EMOJI from emoji import emojize
 import config
 import telebot
 from telebot import types
@@ -63,12 +63,13 @@ class Day:
             bot.send_message(self.curUser.mesID, 'your timetable for ' + day , reply_markup = self.kb2)
     
     def update(self,text, day):
-        emoji = emojize(":spiral_calendar:", use_aliases=True)
+        #EMOJI emoji = emojize(":spiral_calendar:", use_aliases=True)
         for i in range(0,len(self.lessons)):
             if text == self.lessons[i][0]:
                 if self.binaryTable[i] == 1:
                     print('Marina')
-                    self.lessons[i] = (self.lessons[i][0],emoji)
+                    #EMOJI self.lessons[i] = (self.lessons[i][0],emoji)
+                    self.lessons[i] = (self.lessons[i][0],'*')
                     print(self.lessons[i])
                     self.binaryTable[i] = 0
                 else:
