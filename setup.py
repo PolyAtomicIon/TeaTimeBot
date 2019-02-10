@@ -9,6 +9,8 @@ import pickle
 
 bot = telebot.TeleBot(config.token)
 
+print('Bot is launching')
+
 users = {}
 teams = []
 
@@ -332,6 +334,8 @@ def start(message):
         bot.send_message(message.chat.id, 'Signing up new User')
         user = User(message.chat.id, message.chat.username)
         users[message.chat.username].createTimeTable()
+        
+        print('new user:', message.chat.username)
     else:
         user = users[message.chat.username]
 
