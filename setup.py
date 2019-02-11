@@ -346,7 +346,7 @@ def callback_handler(call):
 
     #updateContact(call.message.chat.username)
     
-    if call.message.chat.usernamoe not in users:
+    if call.message.chat.username not in users:
         start(call.message)
     
     if users[call.message.chat.username] == None:
@@ -410,7 +410,7 @@ def handling(message):
 
    # updateContact(message.chat.username)
 
-    if message.chat.usernamoe not in users:
+    if message.chat.username not in users:
         start(message)
     
     if message.text == 'Update Timetable':
