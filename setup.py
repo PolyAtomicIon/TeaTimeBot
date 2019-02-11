@@ -346,6 +346,9 @@ def callback_handler(call):
 
     #updateContact(call.message.chat.username)
     
+    if call.message.chat.usernamoe not in users:
+        start(call.message)
+    
     if users[call.message.chat.username] == None:
         bot.answer_callback_query(call.id, text='Please, write down /start')
     else:
@@ -406,6 +409,9 @@ def callback_handler(call):
 def handling(message):
 
    # updateContact(message.chat.username)
+
+    if message.chat.usernamoe not in users:
+        start(message)
     
     if message.text == 'Update Timetable':
         
